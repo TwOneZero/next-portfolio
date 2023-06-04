@@ -1,6 +1,6 @@
 import Layout from '@/components/layouts/layout';
 import './globals.css';
-
+import { Providers } from './providers';
 export const metadata = {
   title: 'TwOneZero',
   description: 'Portfoilo by Twonezero',
@@ -8,11 +8,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <Layout>
-          {children}
-        </Layout>
+        <Providers >
+          <Layout>
+            {children}
+          </Layout>
+        </Providers>
       </body>
     </html>
   )
