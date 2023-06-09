@@ -18,7 +18,7 @@ const getNotionData = async () => {
       ]
     })
   };
-  const res = await fetch(`${process.env.NOTION_API_URL}/${process.env.NOTION_DATABASE_ID}/query`, options)
+  const res = await fetch(`https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`, options)
     .then(response => response.json());
   return res;
 }
@@ -38,6 +38,7 @@ const Project = async () => {
         })}
       </div>
     </div>
+
   )
 }
 

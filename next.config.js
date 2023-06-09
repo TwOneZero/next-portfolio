@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         protocol: "https",
-        hostname: 's3.us-west-2.amazonaws.com/secure.notion-static.com',
+        hostname: 's3.us-west-2.amazonaws.com',
         port: "",
         pathname: "/**",
       }

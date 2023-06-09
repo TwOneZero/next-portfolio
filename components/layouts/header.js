@@ -12,11 +12,11 @@ const Header = () => {
             </svg>
             <span className="ml-3 text-xl">TOZ Portfolio</span>
           </a>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Link href='/' className='mr-5 hover:text-gray-900'>HOME</Link>
-            <Link href='/projects' className="mr-5 hover:text-gray-900">PROJECT</Link>
+          <nav className="md:ml-auto flex text-base justify-center">
+            <Link href='/' className='mr-5 hover:text-gray-900 '>HOME</Link>
+            <Link href='/projects' className="mr-5 hover:text-gray-900  ">PROJECT</Link>
+            <ModeToggle />
           </nav>
-          <ModeToggle />
         </div>
       </header>
     </>
