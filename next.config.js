@@ -27,6 +27,12 @@ module.exports = {
         hostname: "images.unsplash.com",
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: 's3.us-west-2.amazonaws.com/secure.notion-static.com',
+        port: "",
+        pathname: "/**",
       }
     ],
   },

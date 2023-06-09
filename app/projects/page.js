@@ -1,7 +1,6 @@
 import ProjectItem from '@/components/projects/project-item';
 
 const getNotionData = async () => {
-
   const options = {
     method: 'POST',
     headers: {
@@ -19,28 +18,26 @@ const getNotionData = async () => {
       ]
     })
   };
-
-  const res = await fetch(`${process.env.NOTION_API_URL}/${process.env.NOTION_DATABASE_ID}/query`, options).then(response => response.json());
-
-  // console.log(res);
+  const res = await fetch(`${process.env.NOTION_API_URL}/${process.env.NOTION_DATABASE_ID}/query`, options)
+    .then(response => response.json());
   return res;
-
-
 }
 
 const Project = async () => {
 
   const projects = await getNotionData();
-  console.log(projects);
   return (
-    <>
-      <h1>총 프로젝트 : {projects?.results.length}</h1>
-
-      {projects?.results.map((proj) => {
-        return <ProjectItem key={proj.id} data={proj} />
-      })}
-
-    </>
+    <div>
+      <h1 className='m-6 text-4xl font-bold sm:text-6xl text-center content-center'>
+        총 프로젝트 :
+        <span className=' ml-3 text-sky-800'>{projects?.results.length}</span>
+      </h1>
+      <div className='grid grid-cols-1 md:grid-cols-2 mx-2 my-10 gap-4 sm:w-auto'>
+        {projects?.results.map((proj) => {
+          return <ProjectItem key={proj.id} data={proj} />
+        })}
+      </div>
+    </div>
   )
 }
 
